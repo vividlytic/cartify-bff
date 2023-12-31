@@ -5,6 +5,7 @@ import cors from "cors";
 import express from "express";
 import http from "http";
 import { CatalogueDataSource } from "./datasource/catalogue.js";
+import { OrderDataSource } from "./datasource/order.js";
 import { resolvers } from "./resolver.js";
 import { typeDefs } from "./schema.js";
 
@@ -33,6 +34,7 @@ app.use(
       return {
         dataSources: {
           catalogueApi: new CatalogueDataSource(),
+          orderApi: new OrderDataSource(),
         },
       };
     },

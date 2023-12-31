@@ -1,16 +1,3 @@
-export const typeDefs = `#graphql
+import { readFileSync } from "fs";
 
-# "Book"型の定義
-type Book {
-  id: Int
-  title: String
-  author: String
-  price: Int
-}
-
-# クエリの定義
-type Query {
-  book(id: Int): Book
-  books: [Book]
-}
-`;
+export const typeDefs = readFileSync("./schema.graphql", { encoding: "utf-8" });
